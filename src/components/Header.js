@@ -22,7 +22,12 @@ const Header = () => {
         <HeaderItem title="SEARCH" Icon={SearchIcon} />
         <HeaderItem title="LOGIN" Icon={UserIcon} />
       </div>
-      <Image src="https://links.papareact.com/ua6" width={200} height={100} />
+      <Image
+        src="https://links.papareact.com/ua6"
+        alt="hulu"
+        width={200}
+        height={100}
+      />
     </header>
   );
 };

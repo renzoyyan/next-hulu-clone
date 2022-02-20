@@ -5,6 +5,8 @@ import Results from "../components/Results";
 import requests from "../utils/requests";
 
 export default function Home({ results }) {
+  console.log(results);
+
   // client render after server
   return (
     <div>
