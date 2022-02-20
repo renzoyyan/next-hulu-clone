@@ -3,6 +3,7 @@ import requests from "../utils/requests";
 
 const Nav = () => {
   const router = useRouter();
+  const activeLink = router.query.genre;
 
   return (
     <nav className="relative">
@@ -11,7 +12,9 @@ const Nav = () => {
           <h2
             key={key}
             onClick={() => router.push(`/?genre=${key}`)}
-            className="transition duration-100 transform cursor-pointer last:pr-24 hover:scale-125 hover:text-white active:text-red-500"
+            className={`${
+              activeLink === key && "text-green-500"
+            } transition duration-100 transform cursor-pointer last:pr-24 hover:scale-125 hover:text-white active:text-red-500`}
           >
             {title}
           </h2>
