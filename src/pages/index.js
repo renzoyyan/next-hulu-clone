@@ -26,17 +26,18 @@ export default function Home({ results }) {
 // server render first
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
+  // https://api.themoviedb.org/3/configuration?api_key=<<api_key>>
 
   const request = await fetch(
-    `https://api.themoviedb.org/3${
+    `https://api.themoviedb.org/3/${
       requests[genre]?.url || requests?.fetchTrending.url
-    }`
-  ).then((res) => res.json());
-  // const data = await request.json();
+    }?api_key=${process.env.API_KEY}`
+  );
+  const data = await request.json();
 
   return {
     props: {
-      results: request.results,
+      results: data.results,
     },
   };
 }
